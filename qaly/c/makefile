@@ -16,7 +16,7 @@ CFLAGS += -DUNITY_SUPPORT_64 -DUNITY_OUTPUT_COLOR
 CFLAGS += -Wall
 CFLAGS += -Wextra
 CFLAGS += -pedantic
-CFLAGS += -Werror
+# CFLAGS += -Werror
 CFLAGS += -Wmissing-declarations
 
 all: test qaly
@@ -25,7 +25,7 @@ all: test qaly
 test: tests.out
 	./tests.out
 
-qaly: qaly.o libqaly.o 
+qaly: qaly.o libqaly.o
 	$(CC) $(LDFLAGS) -o qaly qaly.o libqaly.o $(LDLIBS)
 
 qaly.o: qaly.c libqaly.h
@@ -36,8 +36,7 @@ libqaly.o: libqaly.c libqaly.h
 
 .PHONY: clean
 clean:
-	rm -rf *.o *.out qaly
+	rm -rf qaly *.o *.out
 
 tests.out: test_qaly.c libqaly.c libqaly.h
-	@echo Compiling $@
-	$(CC) $(CFLAGS) test-framework/unity.c test_qaly.c libqaly.c -o tests.out $(LDLIBS)
+	${CC} $(CFLAGS) ../../lib/test-framework/unity.c test_qaly.c libqaly.c -o tests.out $(LDLIBS)

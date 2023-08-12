@@ -1,2 +1,5 @@
-#include <stdio.h>
 #include "libqaly.h"
+
+int qaly() {
+    return 1;
+}
