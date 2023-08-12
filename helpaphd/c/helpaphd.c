@@ -7,18 +7,16 @@ int main(void) {
     if (scanf("%d\n", &N) == EOF)
         return EXIT_FAILURE;
 
-    char null_read[10];
-    int c, a, b;
+    char line[10];
+    int a, b;
     while (N--) {
-        if ((c = getchar()) == 'P') {
+        if (!fgets(line, 10, stdin))
+            return EXIT_FAILURE;
+        if (line[0] == 'P') {
             printf("skipped\n");
-            if (scanf("%s\n", null_read) == EOF)
-                return EXIT_FAILURE;
             continue;
         } else {
-            ungetc(c, stdin);
-            if (scanf("%d+%d\n", &a, &b) == EOF)
-                return EXIT_FAILURE;
+            sscanf(line, "%d+%d", &a, &b);
             printf("%d\n", a + b);
         }
     }
