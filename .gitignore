@@ -1,4 +1,5 @@
 other_sols/
 .kattisrc
-*.out
+**/*.out
+
 
