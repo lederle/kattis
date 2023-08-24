@@ -1,5 +1,5 @@
 #include "libspellingbee.h"
 
-int spellingbee() {
-    return 1;
+char **spellingbee(char letters[], char *dict[]) {
+    return 0;
 }
