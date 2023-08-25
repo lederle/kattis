@@ -83,6 +83,16 @@ static void test_two_matches_size_three_dict(void) {
   TEST_ASSERT_EQUAL_STRING_ARRAY(expected, actual, 3);
 }
 
+static void test_match_without_center_letter(void) {
+  char letters[7] = "abcdefg";
+  int dict_size = 3;
+  char *dict[] = {"bcde", "abcd", "abce"};
+  char *expected[] = {"abcd", "abce", "-1"};
+  char **actual = spellingbee(letters, dict, dict_size);
+
+  TEST_ASSERT_EQUAL_STRING_ARRAY(expected, actual, 3);
+}
+
 int main(void) {
     UnityBegin("test_spellingbee.c");
     RUN_TEST(test_canary);
@@ -93,5 +103,6 @@ int main(void) {
     RUN_TEST(test_one_match_size_two_dict);
     RUN_TEST(test_one_match_size_three_dict);
     RUN_TEST(test_two_matches_size_three_dict);
+    RUN_TEST(test_match_without_center_letter);
     return UnityEnd();
 }

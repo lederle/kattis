@@ -11,6 +11,9 @@ char **spellingbee(char letters[], char *dict[], int dict_size) {
   assert(matches);
 
   for (int dict_iter = 0; dict_iter < dict_size; dict_iter++) {
+    char leader = letters[0];
+    if (strchr(dict[dict_iter], leader) == NULL) continue;
+
     size_t span = strspn(dict[dict_iter], letters);
     if (dict[dict_iter][span] != '\0') continue;
 
