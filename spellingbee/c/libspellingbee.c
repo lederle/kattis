@@ -12,13 +12,12 @@ char **spellingbee(char letters[], char *dict[], int dict_size) {
   // find matches
   for (int dict_iter = 0; dict_iter < dict_size; dict_iter++) {
     // if dict[i] matches, malloc space and add to ret
-    // for now, hard code the match
-    char *match = "abcd";
-    // while (match_count >= size) {
-    //     size *= 2;
-    //     matches = realloc(matches, size * sizeof(*matches));
-    //     assert(matches);
-    // }
+    char *match = dict[dict_iter];
+    while (match_count >= size) {
+      size *= 2;
+      matches = realloc(matches, size * sizeof(*matches));
+      assert(matches);
+    }
     int slen = strlen(match) + 1;
     matches[match_count] = malloc(slen * sizeof(char));
     sprintf(matches[match_count], "%s", match);
