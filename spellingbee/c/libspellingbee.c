@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-char **spellingbee(char letters[], char *dict[], int dict_size) {
+char **spellingbee(char letters[], char dict[][25], int dict_size) {
   int size = 2, match_count = 0;
   char **matches = malloc(size * sizeof(*matches));
   assert(matches);

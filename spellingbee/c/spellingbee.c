@@ -5,22 +5,23 @@
 #include "libspellingbee.h"
 
 int main(void) {
-    char letters[7];
-    assert(scanf("%s", letters) == 1);
-    int n;
-    assert(scanf("%d", &n) == 1);
+  char letters[8];
+  assert(scanf("%s", letters) == 1);
+  int n;
+  assert(scanf("%d", &n) == 1);
 
-    char word[25];
-    char *dict[n];
-    for (int i = 0; i < n; i++) {
-      // as alternate: read dict words, have spellingbee() determine
-      // if they match, print.
-      // It is a good exercise to pass the arrays and return the
-      // output in an array, but it ultimately is less clear?
-      assert(scanf("%s", word) == 1);
+  char word[25];
+  char dict[n][25];
+  int i = 0;
+  while (scanf("%s", word) == 1) {
+    // as alternate: read dict words, have spellingbee() determine
+    // if they match, print.
+    // It is a good exercise to pass the arrays and return the
+    // output in an array, but it ultimately is less clear?
 
-      dict[i] = word;
-    }
+    strcpy(dict[i], word);
+    i++;
+  }
 
     char **ret = spellingbee(letters, dict, n);
     int w = 0;
