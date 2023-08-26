@@ -1,5 +1,3 @@
-#include <math.h>
-
 #include "../../lib/test-framework/unity.h"
 #include "libspellingbee.h"
 
@@ -21,6 +19,30 @@ static void test_one_match_size_one_dict(void) {
   char **actual = spellingbee(letters, dict, dict_size);
 
   TEST_ASSERT_EQUAL_STRING_ARRAY(expected, actual, 2);
+}
+
+static void test_boolean_match(void) {
+  char letters[8] = "abcdefg";
+  char word[25] = "abcd";
+  TEST_ASSERT_TRUE(spellingbee_bool(letters, word));
+}
+
+static void test_boolean_not_match(void) {
+  char letters[8] = "abcdefg";
+  char word[25] = "abcz";
+  TEST_ASSERT_FALSE(spellingbee_bool(letters, word));
+}
+
+static void test_boolean_not_match_center_letter_absent(void) {
+  char letters[8] = "abcdefg";
+  char word[25] = "bcde";
+  TEST_ASSERT_FALSE(spellingbee_bool(letters, word));
+}
+
+static void test_boolean_not_match_too_short(void) {
+  char letters[8] = "abcdefg";
+  char word[25] = "acd";
+  TEST_ASSERT_FALSE(spellingbee_bool(letters, word));
 }
 
 static void test_two_matches_size_two_dict(void) {
@@ -126,5 +148,9 @@ int main(void) {
     RUN_TEST(test_match_without_center_letter);
     RUN_TEST(test_sample_input_partial);
     RUN_TEST(test_sample_input_partial2);
+    RUN_TEST(test_boolean_match);
+    RUN_TEST(test_boolean_not_match);
+    RUN_TEST(test_boolean_not_match_center_letter_absent);
+    RUN_TEST(test_boolean_not_match_too_short);
     return UnityEnd();
 }

@@ -33,3 +33,18 @@ char **spellingbee(char letters[], char dict[][25], int dict_size) {
 
   return matches;
 }
+
+#define FALSE 0
+#define TRUE 1
+
+int spellingbee_bool(char letters[], char word[25]) {
+  if (strlen(word) < 4) return FALSE;
+
+  char leader = letters[0];
+  if (strchr(word, leader) == NULL) return FALSE;
+
+  size_t span = strspn(word, letters);
+  if (word[span] != '\0') return FALSE;
+
+  return TRUE;
+}
