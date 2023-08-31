@@ -131,4 +131,6 @@ EOF
 
 # GIT
 git add .
+git clang-format
+git add .
 git commit -m "INIT: $ex_name"
