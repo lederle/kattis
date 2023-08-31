@@ -9,6 +9,9 @@ ex_name=$1
 description=$2
 dir_name=${ex_name}
 
+# GIT
+git checkout -b $ex_name
+
 mkdir -p $dir_name/c
 cd $dir_name/c
 # the main file; scans input, prints result using ex_lib
@@ -125,3 +128,7 @@ int main(void) {
     return UnityEnd();
 }
 EOF
+
+# GIT
+git add .
+git commit -m "INIT: $ex_name"
