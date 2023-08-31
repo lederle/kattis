@@ -1,6 +1,6 @@
 #ifndef __ARTICHOKE__
 #define __ARTICHOKE__
 
-int artichoke();
+double artichoke(int, int, int, int, int, int);
 
 #endif

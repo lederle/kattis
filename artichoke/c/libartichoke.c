@@ -1,3 +1,5 @@
 #include "libartichoke.h"
 
-int artichoke() { return 1; }
+double artichoke(int p, int a, int b, int c, int d, int n) {
+    return 1.0;
+}
