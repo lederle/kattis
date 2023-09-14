@@ -6,7 +6,7 @@ LDLIBS = -lm
 
 CFLAGS = -std=gnu11
 CFLAGS += -g
-CFLAGS += -Og
+# CFLAGS += -Og
 CFLAGS += -DUNITY_SUPPORT_64 -DUNITY_OUTPUT_COLOR
 
 # This is the optimization used on kattis
