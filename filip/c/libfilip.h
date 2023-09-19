@@ -1,6 +1,6 @@
 #ifndef __FILIP__
 #define __FILIP__
 
-int filip();
+void filip(int N, int *ret);
 
 #endif
