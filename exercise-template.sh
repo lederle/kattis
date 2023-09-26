@@ -22,8 +22,12 @@ ex_lib_h=lib${ex_name}.h
 ex_test=test_${ex_name}.c
 
 touch $ex_src makefile $ex_lib $ex_lib_h $ex_test
+ 
 # blank file to re-type code as practice
 touch reps.c
+
+# summarize this particular problem in the README
+touch README.md
 
 TAB="$(printf '\t')"
 
