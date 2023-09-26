@@ -1,4 +1,4 @@
-These are my [kattis](https://open.kattis.com/) problems, predominately in C.
+These are my [kattis](https://open.kattis.com/) solutions, predominately in C.
 
 I am following [Competitive Programming](https://cpbook.net/),
 by the Halims and Effendy.
