@@ -1,3 +1,3 @@
 #include "libaddtwonumbers.h"
 
-int addtwonumbers() { return 1; }
+int addtwonumbers(int a, int b) { return a + b; }
