@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # usage: ./exercise-template.sh <exercise-name> "<description>"
-# output: 
+# output:
 
 set -e
 
@@ -22,7 +22,7 @@ ex_lib_h=lib${ex_name}.h
 ex_test=test_${ex_name}.c
 
 touch $ex_src makefile $ex_lib $ex_lib_h $ex_test
- 
+
 # blank file to re-type code as practice
 touch reps.c
 
@@ -31,8 +31,13 @@ touch README.md
 
 TAB="$(printf '\t')"
 
+# local gitignore file
+cat <<EOF >>.gitignore
+$ex_name
+EOF
+
 # template make file
-cat << EOF >> makefile
+cat <<EOF >>makefile
 .POSIX:
 .SUFFIXES:
 
@@ -78,7 +83,7 @@ ${TAB}\${CC} \$(CFLAGS) ../../lib/test-framework/unity.c test_$ex_name.c lib$ex_
 EOF
 
 # template c file
-cat << EOF >> $ex_src
+cat <<EOF >>$ex_src
 #include <stdio.h>
 #include <stdlib.h>
 #include "$ex_lib_h"
@@ -92,7 +97,7 @@ int main(void) {
 EOF
 
 #template lib src
-cat << EOF >> $ex_lib
+cat <<EOF >>$ex_lib
 #include "$ex_lib_h"
 
 int $ex_name() {
@@ -101,7 +106,7 @@ int $ex_name() {
 EOF
 
 #template lib header
-cat << EOF >> $ex_lib_h
+cat <<EOF >>$ex_lib_h
 #ifndef __${ex_name^^}__
 #define __${ex_name^^}__
 
@@ -111,7 +116,7 @@ int $ex_name();
 EOF
 
 #template test file
-cat << EOF >> $ex_test
+cat <<EOF >>$ex_test
 #include "../../lib/test-framework/unity.h"
 #include "$ex_lib_h"
 
