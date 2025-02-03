@@ -1,6 +1,6 @@
 #ifndef __DECIMALDELETION__
 #define __DECIMALDELETION__
 
-int decimaldeletion();
+int decimaldeletion(double);
 
 #endif

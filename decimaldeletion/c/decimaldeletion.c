@@ -1,3 +1,4 @@
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -5,4 +6,9 @@
 
 //
 
-int main(void) { return EXIT_SUCCESS; }
+int main(void) {
+  double input;
+  assert(scanf("%lf", &input));
+  printf("%d\n", decimaldeletion(input));
+  return EXIT_SUCCESS;
+}

@@ -1,3 +1,5 @@
 #include "libdecimaldeletion.h"
 
-int decimaldeletion() { return 1; }
+#include <math.h>
+
+int decimaldeletion(double input) { return round(input); }
