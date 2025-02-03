@@ -1,3 +1,3 @@
 #include "libameriskur.h"
 
-int ameriskur() { return 1; }
+double ameriskur(int football) { return 0.09144 * football; }
