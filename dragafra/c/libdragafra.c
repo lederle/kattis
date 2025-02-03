@@ -1,3 +1,3 @@
 #include "libdragafra.h"
 
-int dragafra() { return 1; }
+int dragafra(int a, int b) { return a - b; }
