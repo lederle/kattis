@@ -1,3 +1,3 @@
 #include "libbergmal.h"
 
-int bergmal() { return 1; }
+char *bergmal(char input[]) { return input; }
