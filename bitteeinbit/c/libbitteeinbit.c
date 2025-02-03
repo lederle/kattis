@@ -1,3 +1,3 @@
 #include "libbitteeinbit.h"
 
-int bitteeinbit() { return 1; }
+char bitteeinbit(char *input) { return input[0]; }
