@@ -1,6 +1,6 @@
 #ifndef __DIGITSWAP__
 #define __DIGITSWAP__
 
-int digitswap();
+char *digitswap(char[]);
 
 #endif
