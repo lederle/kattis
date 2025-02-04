@@ -1,6 +1,8 @@
 #ifndef __ECHOECHOECHO__
 #define __ECHOECHOECHO__
 
-int echoechoecho();
+#define MAX_WORD 15
+
+void echoechoecho(char *, char *);
 
 #endif
