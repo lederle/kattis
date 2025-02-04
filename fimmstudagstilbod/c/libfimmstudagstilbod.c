@@ -1,3 +1,5 @@
 #include "libfimmstudagstilbod.h"
 
-int fimmstudagstilbod() { return 1; }
+int fimmstudagstilbod(int year) {
+  return 1000 + (year - 2020 > 0 ? year - 2020 : 0) * 100;
+}

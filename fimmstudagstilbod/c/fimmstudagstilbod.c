@@ -1,3 +1,4 @@
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -5,4 +6,9 @@
 
 //
 
-int main(void) { return EXIT_SUCCESS; }
+int main(void) {
+  int year;
+  assert(scanf("%d", &year));
+  printf("%d\n", fimmstudagstilbod(year));
+  return EXIT_SUCCESS;
+}
