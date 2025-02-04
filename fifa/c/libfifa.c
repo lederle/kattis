@@ -1,3 +1,3 @@
 #include "libfifa.h"
 
-int fifa() { return 1; }
+int fifa(int total, int yearly) { return 2022 + total / yearly; }
