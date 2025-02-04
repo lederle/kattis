@@ -1,3 +1,4 @@
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -5,4 +6,11 @@
 
 //
 
-int main(void) { return EXIT_SUCCESS; }
+int main(void) {
+  char greeting[MAX_GREETING + 1];
+  assert(scanf("%s", greeting));
+  char response[MAX_GREETING * 2];
+  greetings2(greeting, response);
+  printf("%s\n", response);
+  return EXIT_SUCCESS;
+}
