@@ -1,3 +1,3 @@
 #include "libflatbokuveisla.h"
 
-int flatbokuveisla() { return 1; }
+int flatbokuveisla(int slices, int residents) { return slices % residents; }
